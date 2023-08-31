@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="${board.title}">타이틀</title>
+</head>
+<body>
+	<p th:text="${board.title}" style="width : 500px; border-style : double">제목</p>
+	<p th:text="${board.content}" style="width : 500px; height : 400px; border-style : double">내용</p>
+	<a th:href="@{${board.filepath}}" th:text="${board.filename}"></a><br>
+	<a th:href="@{/board/delete(id=${board.id})}" onclick="alert('삭제되었습니다');">글삭제</a>
+	<a th:href="@{/board/modify/{id}(id=${board.id})}">수정</a>
+</body>
+</html>
